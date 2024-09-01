@@ -46,11 +46,40 @@ function start(houseHoldMembers, houseSize) {
 }
 
 function displayOutput() {
-
+  for (arr of cfpData){
+    console.log(arr);
+    const output = document.getElementById("output");
+    const newP1 = document.createElement("p");
+    const newP2 = document.createElement("p");
+    const newP3 = document.createElement("p");
+    const newP4 = document.createElement("p");
+    const newP5 = document.createElement("p");
+    const newP6 = document.createElement("p");
+    newP1.textContent = `Carbon Footprint total is ${arr[4]}`;
+    newP2.textContent = `number of household members is ${arr[0]}`;
+    newP3.textContent = `score of house members is ${arr[2]}`;
+    newP4.textContent = `size of house is ${arr[1]}`;
+    newP5.textContent = `score of size of house is ${arr[3]}`;
+    newP6.textContent = "-"; // i just wanted to add a line break to separate each array entry
+    output.appendChild(newP1);
+    output.appendChild(newP2);
+    output.appendChild(newP3);
+    output.appendChild(newP4);
+    output.appendChild(newP5);
+    output.appendChild(newP6);
+  }
 }
 
 start(5, "apt");
 start(4, "large");
 start(3, "medium");
+//new entries after the code along:
+start(8, "large");
+start(1, "apt");
+start(4, "medium");
+start(3, "small");
+start(6, "large");
 
 displayOutput();
+
+//took a break -> start on the last video when resuming hw
