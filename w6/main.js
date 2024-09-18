@@ -44,11 +44,18 @@ function start(houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
+  const firstName = FORM.firstname.value;
+  const lastName = FORM.lastname.value;
   cfpData.push({
+    // notes so i dont get confused:
+    // houseM: houseHoldMembers
+    // (html name): (js variable)
     houseM: houseHoldMembers,
     houseS: houseSize,
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
+    firstname: firstName,
+    lastname: lastName,
     cfpTotal: total,
   });
 }
@@ -63,9 +70,16 @@ function displayOutput() {
     const newP = document.createElement("p");
     newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}),`;
     newP.textContent += `and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`;
+    const newH4 = document.createElement("h4");
+    newH4.textContent = `First Name: ${obj.firstname}`;
+    const newH5 = document.createElement("h4");
+    newH5.textContent = `Last Name: ${obj.lastname}`;
+
     OUTPUT.appendChild(newH2);
     OUTPUT.appendChild(newH3);
     OUTPUT.appendChild(newP);
+    OUTPUT.appendChild(newH4);
+    OUTPUT.appendChild(newH5);
 }
 }
 
