@@ -40,22 +40,20 @@ function determineHouseHoldPts(numberInHousehold) {
   return houseHoldPoints;
 }
 
-function start(houseHoldMembers, houseSize) {
+function start(firstName, lastName, houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
-  const firstName = FORM.firstname.value;
-  const lastName = FORM.lastname.value;
   cfpData.push({
     // notes so i dont get confused:
     // houseM: houseHoldMembers
     // (html name): (js variable)
+    firstname: firstName,
+    lastname: lastName,
     houseM: houseHoldMembers,
     houseS: houseSize,
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
-    firstname: firstName,
-    lastname: lastName,
     cfpTotal: total,
   });
 }
@@ -66,20 +64,20 @@ function displayOutput() {
     const newH2 = document.createElement("h2");
     newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
     const newH3 = document.createElement("h3");
-    newH3.textContent = `Based on the number in and size of home`;   
+    newH3.textContent = `Based on the number in and size of home for ${obj.firstname} ${obj.lastname}`;   
     const newP = document.createElement("p");
     newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}),`;
     newP.textContent += `and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`;
-    const newH4 = document.createElement("h4");
-    newH4.textContent = `First Name: ${obj.firstname}`;
-    const newH5 = document.createElement("h4");
-    newH5.textContent = `Last Name: ${obj.lastname}`;
+    // const newH4 = document.createElement("h4");
+    // newH4.textContent = `First Name: ${obj.firstname}`;
+    // const newH5 = document.createElement("h4");
+    // newH5.textContent = `Last Name: ${obj.lastname}`;
 
     OUTPUT.appendChild(newH2);
     OUTPUT.appendChild(newH3);
     OUTPUT.appendChild(newP);
-    OUTPUT.appendChild(newH4);
-    OUTPUT.appendChild(newH5);
+    // OUTPUT.appendChild(newH4);
+    // OUTPUT.appendChild(newH5);
 }
 }
 
@@ -90,7 +88,7 @@ FORM.addEventListener('submit', function(e){
   const houseHoldMembers = parseInt(FORM.housem.value); // I had to look at external sources on how to transfer a string data type to become an int. data type
   const houseSize = FORM.houses.value;
   
-  start(houseHoldMembers, houseSize);
+  start(firstName, lastName, houseHoldMembers, houseSize);
   OUTPUT.innerHTML = ""; //clears the prexisting information
   displayOutput();
   FORM.reset();
