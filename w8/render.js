@@ -88,3 +88,4 @@ export { renderTbl, renderTblHeading };
 // i tried putting the line of code:   TBL.innerHTML = ""; into multiple different spots
 // but failed to get it to work.  i tried putting it in the function render table, rendertblbtns function, and eventlistener delete function
 // but couldnt get it to work.  will be watching the video explaining it.
+// gonna watch solution & edit code:
