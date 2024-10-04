@@ -2,7 +2,6 @@ const TBL = document.getElementById("tab-data");
 const FORM = document.getElementById("form");
 
 function renderTblHeading() {
-  TBL.innerHTML = "";
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
@@ -75,11 +74,14 @@ function renderTblBody(data) {
 
 function renderTbl(data) {
   TBL.innerHTML = "";
-  const table = renderTblHeading();
-  const tbody = renderTblBody(data); //needed this
+  if (data.length !== 0) {
+    console.log("Build the table")
+    const table = renderTblHeading();
+    const tbody = renderTblBody(data); //needed this
+    table.appendChild(tbody);
+    TBL.appendChild(table);
+  }
 
-  table.appendChild(tbody);
-  TBL.appendChild(table);
 }
 
 export { renderTbl, renderTblHeading };
