@@ -1,4 +1,5 @@
 const TBL = document.getElementById("tab-data");
+const FORM = document.getElementById("form");
 
 function renderTblHeading() {
   TBL.innerHTML = "";
@@ -16,7 +17,7 @@ function renderTblHeading() {
   return table; 
 }
 
-function renderTblBtns(index, data){
+function renderTblBtns(index, data, obj){
   const td = document.createElement("td");
   const btnEdit = document.createElement("button");
   const btnDel = document.createElement("button");
@@ -33,15 +34,19 @@ function renderTblBtns(index, data){
   });
 
   // Goals for coding challenge:
-  // 1. fix the table heading showing up on the delete operation? idk what this means
-  // 2. get the update -> edit button -> to popular the existing form with object values that user has already entered
-  // hint: FORM[index], but how do you reference the FORM inside the render module?
+  // 1. fix the table heading showing up on the delete operation? couldnt get to work
+  // 2. done & working get the update -> edit button -> to popular the existing form with object values that user has already entered
+  // notes on what i tried to do @ the bottom of this page:
 
   btnEdit.addEventListener('click', function(e){
-    // steps to do:
-    // get existing information and reput it onto the form
-    // splice/delete said information
-    // reupload the information when clicking submit
+    console.log("edit button clicked")
+    console.log(e);
+    FORM[1].value = obj.firstName;
+    FORM[2].value = obj.lastName;
+    FORM[3].value = obj.houseM;
+    FORM[4].value = obj.houseS;
+    data.splice(index, 1);
+    renderTbl(data);
 
   });
 
@@ -61,7 +66,7 @@ function renderTblBody(data) {
         tr.appendChild(td);
       }
     }
-    const td = renderTblBtns(index, data);
+    const td = renderTblBtns(index, data, obj);
     tr.appendChild(td);
     tbody.appendChild(tr);
   });
@@ -69,6 +74,7 @@ function renderTblBody(data) {
 }
 
 function renderTbl(data) {
+  TBL.innerHTML = "";
   const table = renderTblHeading();
   const tbody = renderTblBody(data); //needed this
 
@@ -76,10 +82,9 @@ function renderTbl(data) {
   TBL.appendChild(table);
 }
 
-//coding challenge notes:
-// what i tried: 
-// - i tried transferring our data onto a new function code block but I cant get our data to transfer to the new rows
-// - I feel like i am missing something that allows me to get the data to properly communicate with each function
-// - i got stuck so i will be continuing the code along to find the solutions
-
 export { renderTbl, renderTblHeading };
+
+// What i tried:
+// i tried putting the line of code:   TBL.innerHTML = ""; into multiple different spots
+// but failed to get it to work.  i tried putting it in the function render table, rendertblbtns function, and eventlistener delete function
+// but couldnt get it to work.  will be watching the video explaining it.
