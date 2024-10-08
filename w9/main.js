@@ -69,3 +69,6 @@ if (firstName.length >= 1 && lastName.length >= 1) {
 
 });
 
+// push notes, pages arent updating for some reason so repushing.  Its not fixing
+// the >= 1 line of code
+// adding another line of code test
