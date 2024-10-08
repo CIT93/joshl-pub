@@ -58,7 +58,7 @@ FORM.addEventListener("submit", function (e) {
     }
     
   // testing from video:
-if (firstName.length > 1 && lastName.length > 1) {
+if (firstName.length >= 1 && lastName.length >= 1) {
     start(firstName, lastName, houseHoldMembers, houseSize);
     saveLS(cfpData);
     renderTbl(cfpData);

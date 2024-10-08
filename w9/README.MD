@@ -14,3 +14,5 @@ got both first and last name messages to pop up
 NEXT GOAL:
 only submit carboot footprint and render if the first and last name are here
 done
+
+note: i had an issue with 1 letter digits and realized i type it wrong. had to repush my code
