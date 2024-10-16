@@ -2,12 +2,12 @@ import {FORM, TBL} from "./global.js";
 import { saveLS } from "./storage.js";
 
 
-const renderTblHeading = function() {
+const renderTblHeading = () => {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
   const headingTextArr = ["Name", "HouseHold", "HouseSize","Footprint", "Action"]
-  headingTextArr.forEach(function (text) {
+  headingTextArr.forEach(text => {
     const th = document.createElement("th");
     th.textContent = text;
     tr.appendChild(th);
@@ -17,13 +17,13 @@ const renderTblHeading = function() {
   return table; 
 }
 
-const onUpdate = function(index, data) {
+const onUpdate = (index, data) => {
     data.splice(index, 1);
     saveLS(data);
     renderTbl(data);
 }
 
-const renderTblBtns = function(index, data, obj){
+const renderTblBtns = (index, data, obj) => {
   const td = document.createElement("td");
   const btnEdit = document.createElement("button");
   const btnDel = document.createElement("button");
@@ -32,13 +32,13 @@ const renderTblBtns = function(index, data, obj){
   td.appendChild(btnEdit);
   td.appendChild(btnDel);
 
-  btnDel.addEventListener('click', function(e){
+  btnDel.addEventListener('click', (e) => {
     console.log("delete button clicked")
     // console.log(e);
     onUpdate(index, data);
   });
 
-  btnEdit.addEventListener('click', function(e){
+  btnEdit.addEventListener('click', (e) => {
     console.log("edit button clicked")
     // console.log(e);
     FORM[1].value = obj.firstName;
@@ -52,9 +52,9 @@ const renderTblBtns = function(index, data, obj){
 }
 
 
-const renderTblBody = function(data) {
+const renderTblBody = data => {
   const tbody = document.createElement("tbody");
-  data.forEach(function (obj, index) {
+  data.forEach( (obj, index) => {
     // console.log(index);
     const tr = document.createElement("tr");
     for (const [key, value] of Object.entries(obj)) {
@@ -71,7 +71,7 @@ const renderTblBody = function(data) {
   return tbody; //needed this
 }
 
-const renderTbl = function(data) {
+const renderTbl = data => {
   TBL.innerHTML = "";
   if (data.length !== 0) {
     // console.log("Build the table")
@@ -84,9 +84,3 @@ const renderTbl = function(data) {
 }
 
 export { renderTbl, renderTblHeading };
-
-// What i tried:
-// i tried putting the line of code:   TBL.innerHTML = ""; into multiple different spots
-// but failed to get it to work.  i tried putting it in the function render table, rendertblbtns function, and eventlistener delete function
-// but couldnt get it to work.  will be watching the video explaining it.
-// gonna watch solution & edit code:
