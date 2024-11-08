@@ -48,7 +48,7 @@ function endMessage(exercise) {
 // Promise Function, resolve = onSuccess, reject = errorCode
 function anotherSet() {
     return new Promise((resolve, reject) => {
-        reject(setTimeout(() => {
+        resolve(setTimeout(() => {
             const message = `Ready for another set?`
             const h1 = document.createElement("h1");
             h1.textContent = `Ready for another set?`;
