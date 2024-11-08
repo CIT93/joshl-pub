@@ -6,9 +6,9 @@ output.appendChild(h1);
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-    const exercise = document.getElementById("exerciseType").value;
-    const reps = document.getElementById("reps").value;
-    const time = document.getElementById("time").value;
+    const exercise = form.exerciseType.value;
+    const reps = form.reps.value;
+    const time = form.time.value;
     
     //Async timeout code:
     endMessage(exercise) //I made this resolve to make sure it works
