@@ -14,17 +14,25 @@ import { saveLS } from "./storage.js";
 //     console.log(post);
 // })
 
-const determineAvg = (data) => {
+const calculateAvg = (data) => {
   const reduceTotal = data.reduce((sum, ea) => sum + ea.total, 0)
-  const tableRef = document.getElementById("tbody_id");
-  let newRow = tableRef;
+  const tableRef = document.getElementById("table-id");
+  let newRow = tableRef.insertRow(-1);
   let newCell = newRow.insertCell(0);
-  let newCell1 = newRow.insertCell(0);
-// I am having big issues.  I will come back after i look at solution
+  let newCell_1 = newRow.insertCell(0);
+  let newCell_2 = newRow.insertCell(0);
+  let newCell_3 = newRow.insertCell(0);
+  let newCell_4 = newRow.insertCell(0);
+  let newCell_5 = newRow.insertCell(0);
+  let newLabl = document.createTextNode(`Average Footprint: ${Math.floor(reduceTotal/data.length)}`)
+  // let newText = document.createTextNode(`${Math.floor(reduceTotal/data.length)}`)
+  newCell_1.appendChild(newLabl);
+  // newCell.appendChild(newText);
 }
 
 const renderTblHeading = () => {
   const table = document.createElement("table");
+  table.setAttribute("id", "table-id")
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
   const headingTextArr = ["Name", "HouseHold", "HouseSize", "Food Choice", "Footprint", "Action"]
@@ -98,7 +106,7 @@ const renderTbl = data => {
     const tbody = renderTblBody(data); //needed this
     table.appendChild(tbody);
     TBL.appendChild(table);
-    determineAvg(data);
+    calculateAvg(data);
   }
 
 }
