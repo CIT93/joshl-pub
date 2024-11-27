@@ -15,3 +15,6 @@ PART 1:
 - I am unsure how to allow the checkbox to have a "default vaule" of "1" when it is not selected.  My thought process was that when it is unselected, it will multiply the water consumption points by "1", resulting in no additional CFP points.
 - I messed around with my main.js file for targetting the "both" checkbox but I am unsure if this is the proper syntax and way to enable a default value of 1 when the checkbox is left unchecked.  
 - I tried watching the w16 code discussion video explaining the different way of writing the if/else statement for the checkbox but i am totally confused.  I will look into the solution after i attempt the next part.
+
+Part 2:
+- Everything should be working as intended.  I didnt have any issues and replicated how the water consumption looks like.

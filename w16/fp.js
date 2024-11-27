@@ -23,7 +23,6 @@ class FP {
     this.calHouseSizePoints();
     this.calFoodChoicePoints();
     this.calFoodSourcePoints();
-
     this.calTotal();
   }
   calHouseSizePoints() {
