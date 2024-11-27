@@ -63,6 +63,8 @@ const renderTblBtns = (index, data, obj) => {
     FORM[5].value = obj.foodChoice;
     FORM[6].value = obj.foodSource;
     FORM[7].value = obj.waterConsumptionPoints.toString();
+    FORM[8].checked = obj.both;
+    FORM[9].value = obj.purchasesPoints;
     onUpdate(index, data);
   });
 
