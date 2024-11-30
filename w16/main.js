@@ -43,6 +43,7 @@ FORM.addEventListener("submit", e => {
     saveLS(cfpData);
     renderTbl(cfpData);
     FORM.reset();
+    BOTH.disabled = false;
   } else {
     document.getElementById("submitError").textContent = "Form requires first name and last name";
   }  
@@ -51,5 +52,7 @@ FORM.addEventListener("submit", e => {
 WATER.addEventListener("change", e => {
   if(parseInt(WATER.value) === 0 ){
     BOTH.disabled = true;
+  } else {
+    BOTH.disabled = false;
   }
 })
