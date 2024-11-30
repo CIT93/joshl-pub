@@ -18,3 +18,11 @@ PART 1:
 
 Part 2:
 - Everything should be working as intended.  I didnt have any issues and replicated how the water consumption looks like.
+
+
+What I learned from watching the solution:
+I had a lot of trouble understanding the boolean when using check boxes and making it become an if/else statement.
+I learned the format behind it now though:
+(e.target(checkbox ID).checked) ? (true) : (false);
+the "?" acts as the boolean statement and the ":" separates the statements to determine what happens if its checked (true) and what happends if it is not checked (false).
+This is what I mainly had issues with as everything else worked pretty flawlessly.  
