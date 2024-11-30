@@ -47,3 +47,9 @@ FORM.addEventListener("submit", e => {
     document.getElementById("submitError").textContent = "Form requires first name and last name";
   }  
 });
+
+WATER.addEventListener("change", e => {
+  if(parseInt(WATER.value) === 0 ){
+    BOTH.disabled = true;
+  }
+})
