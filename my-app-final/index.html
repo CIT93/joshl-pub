@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my-app step 8</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <form id="form">
+      <fieldset>
+        <legend>Game Night Decision Making App:</legend>
+        <!-- player count counter -->
+        <div>
+          <label for="">Player Count:</label>
+          <input
+            type="number"
+            name="playerCount"
+            id="playerCount"
+            min="2"
+            max="5"
+          />
+          <span id="playerCountError" class="error"></span>
+        </div>
+
+        <!-- Board game or Pc game -->
+        <div>
+          <label for="">What type of game:</label>
+          <select name="gameType" id="gameType" required>
+            <option value="">---Please enter the type of game---</option>
+            <option value="board game">board game</option>
+            <option value="pc game">pc game</option>
+          </select>
+        </div>
+
+        <!-- day of the week: -->
+        <div>
+          <label for="">What day is it:</label>
+          <select name="currentDay" id="currentDay" required>
+            <option value="">---please enter the day of the week:---</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+          </select>
+        </div>
+
+        <!-- Mood Calculation -->
+        <div>
+          <label for="">Mood Level (5 being the best):</label>
+          <input
+            type="number"
+            name="currentEnjoymentLevel"
+            id="currentEnjoymentLevel"
+            min="1"
+            max="5"
+            required
+          />
+          <span id="currentEnjoymentLevelError" class="error"></span>
+        </div>
+
+        <!-- submit button -->
+        <button type="submit">Submit</button>
+        <span id="submitError" class="error"></span>
+      </fieldset>
+    </form>
+    <div id="output"><label for="test"></label></div>
+    <div id="tab-data"></div>
+
+  </body>
+</html>

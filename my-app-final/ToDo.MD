@@ -1,0 +1,5 @@
+im not really sure what I would like to add to my app so ill just be listing some things that sound kind of cool or that I would like to try:
+
+1. i want to get better at style.js and look into a bunch of cool style stuff i could do to make MY APP look much nicer and cleaner.  Right now it just looks like our CFP, which is okay, but I want to add some more stuff to make it look original.  Such as watching youtube videos showcasing the potential of style.css and what we could do to make it look much more visually pleasing.
+2. With this week's discussion board adding new rows / cells, i think that would be cool to add something like that onto MY APP.  Maybe add a row that showcases what the user inputted instead of it only being displayed inside of the console?  Would be cool to try but i might have issues with coding it.
+3. I am not sure if this is possible with our current knowledge of JS but I think it would be cool if i could somehow add like a photo of the game choice as a new cell / row?  It might require me to watch youtube videos as we weren't taught this but i think that would be something cool to look into.
